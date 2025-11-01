@@ -13,7 +13,6 @@ void setup() {
 }
 
 void loop() {
-if(digitalRead(pushbutton) ==1 ){
   FIRST_INDEX=0;
   while (FIRST_INDEX <= 3) {
     for(int index = 3 ; index >= FIRST_INDEX ; index--){
@@ -45,5 +44,5 @@ if(digitalRead(pushbutton) ==1 ){
         digitalWrite(LEDS[idx] , 0);
     }
   delay(1000);
-}
+
 }

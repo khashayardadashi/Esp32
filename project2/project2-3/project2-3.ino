@@ -79,6 +79,36 @@ void loop() {
     ledcWrite(enb,dutyUp);
     ledcWrite(ena,dutyLeft);
   } 
+    else if (ry == 720 && rx > 720) {
+    dutyRight = map(rx, 720, 1023, 0, 255);
+    speed1 = map(dutyRight, 0, 255, 0, 100);
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("L:0 R:" + (String)speed1);
+    lcd.setCursor(0, 1);
+    lcd.print("Dir : R");
+    digitalWrite(in1, 0);
+    digitalWrite(in2, 0);
+    digitalWrite(in3, 1);
+    digitalWrite(in4, 0);
+    ledcWrite(enb, dutyRight);
+    ledcWrite(ena, 0);
+  } 
+    else if (ry == 720 && rx < 720) {
+    dutyLeft = map(rx, 720, 0, 0, 255);
+    speed2=map(dutyLeft,0,255, 0,100);
+    lcd.clear();
+    lcd.setCursor(0,0);
+    lcd.print("L:" + (String)speed2 + "R:stop" );
+    lcd.setCursor(0,1);
+    lcd.print( "Dir : L");
+    digitalWrite(in1,1);
+    digitalWrite(in2,0);
+    digitalWrite(in3,0);
+    digitalWrite(in4,0);
+    ledcWrite(ena,dutyLeft);
+    ledcWrite(enb,0);
+  } 
   else if (ry < 720 && rx == 720) {
     dutyDown = map(ry, 720, 0, 0, 255);
     speed = map(dutyDown, 0, 255, 0, 100);

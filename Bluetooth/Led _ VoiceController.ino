@@ -1,6 +1,6 @@
 #include "BluetoothSerial.h"
 BluetoothSerial BT;
-String w;
+String word;
 void setup(){
   BT.begin("Esp32");
   Serial.begin(115200);
@@ -10,11 +10,11 @@ void setup(){
 void loop(){
   if(BT.available()){
     w=BT.readString();
-    if(w == "روشن شو"){
+    if(word == "روشن شو"){
       digitalWrite(23,1);
       BT.print ("led turn on");
     }
-    else if (w == "خاموش شو"){
+    else if (word == "خاموش شو"){
       digitalWrite(23, 0);
       BT.print("led turn off");
     }
@@ -22,4 +22,5 @@ void loop(){
       digitalWrite(23,0);
     }
   }
+
 }

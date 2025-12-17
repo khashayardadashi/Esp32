@@ -17,7 +17,7 @@ Motor speed control using PWM , analog input reading via ADC , and simulation of
 ### 🔹 Wireless Communication
 
 **Bluetooth :** 
-Bluetooth-based communication with ESP32 for data transmission, reception, and wireless hardware control.
+Bluetooth-based communication with ESP32 for data transmission , reception , and wireless hardware control.
 
 ## 🚀 Clone Repository
 

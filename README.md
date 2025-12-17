@@ -1,36 +1,28 @@
 # 🎓 ESP32 University Projects
 
-مجموعه‌ ای از **پروژه‌های دانشگاهی** با استفاده از **ESP32** 
+A collection of **university-level ESP32 projects**, categorized based on their main application areas. These projects focus on fundamental concepts of microcontrollers and embedded systems.
 
-## 📌 Projects
+## 📌 Project Categories
 
-### 🔹 project1
+### 🔹 Basic GPIO Control
 
-* کنترل روشن و خاموش شدن LED
-* آشنایی با GPIO و ساختار پایه برنامه‌نویسی ESP32
+**Project 1:** LED Control
+Basic LED on/off control to get familiar with ESP32 GPIOs and the fundamental program structure.
 
-### 🔹 project2
+### 🔹 Control Systems & Analog Interface
 
-* کنترل سرعت موتور با **PWM**
-* خواندن ورودی آنالوگ با **ADC**
-* استفاده از **Schmitt Trigger** برای پایداری سیگنال
-* شبیه‌سازی سلکتور ماشین لباس‌شویی
+**Project 2:** Motor Control using PWM, ADC, and Schmitt Trigger
+Motor speed control using PWM, analog input reading via ADC, and simulation of a washing machine selector using a Schmitt Trigger for signal stability.
 
-### 🔹 Bluetooth
+### 🔹 Wireless Communication
 
-* ارتباط بلوتوث با ESP32
-* ارسال و دریافت داده
-* کنترل سخت‌افزار به‌صورت بی‌سیم
-
+**Project 3:** Bluetooth Communication
+Bluetooth-based communication with ESP32 for data transmission, reception, and wireless hardware control.
 
 ## 🚀 Clone Repository
-
-برای دریافت پروژه‌ها:
 
 ```bash
 git clone https://github.com/khashayardadashi/Esp32.git
 ```
 
----
-
-📎 این پروژه‌ها صرفاً با هدف آموزشی و دانشگاهی پیاده‌سازی شده‌اند.
+This repository is intended strictly for educational and university use.

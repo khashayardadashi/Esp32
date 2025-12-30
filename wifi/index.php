@@ -21,7 +21,7 @@ if ($name && $status) {
     if ($status == "ورود") {
         $time_in = $datetime;
         $time_out = NULL;
-    } else { // خروج
+    } else { 
         $time_in = NULL;
         $time_out = $datetime;
     }
@@ -101,4 +101,5 @@ $result = $conn->query($sql);
 
 </body>
 </html>
+
 

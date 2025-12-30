@@ -2,7 +2,6 @@
 include('jdf.php');
 date_default_timezone_set('Asia/Tehran');
 
-// اتصال به دیتابیس
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -52,7 +51,9 @@ $result = $conn->query($sql);
     <title>گزارش ورود و خروج</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/shabnam-font@v5.0.1/dist/font-face.css" rel="stylesheet">
-    <style>body{font-family:Shabnam,sans-serif;}</style>
+    <style>body {
+            font-family: Shabnam, sans-serif;
+        }</style>
 </head>
 <body class="bg-gray-100 min-h-screen p-6">
 
@@ -72,22 +73,22 @@ $result = $conn->query($sql);
                 </thead>
                 <tbody class="divide-y">
                 <?php
-if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        // تبدیل میلادی به شمسی
-        $time_in = $row['time_in'] ? jdate('Y/m/d - H:i', strtotime($row['time_in']) )  : '-';
-        $time_out = $row['time_out'] ? jdate('Y/m/d - H:i', strtotime($row['time_out'])) : '-';
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        // تبدیل میلادی به شمسی
+                        $time_in = $row['time_in'] ? jdate('Y/m/d - H:i', strtotime($row['time_in'])) : '-';
+                        $time_out = $row['time_out'] ? jdate('Y/m/d - H:i', strtotime($row['time_out'])) : '-';
 
-        echo "<tr class='hover:bg-gray-50 transition'>";
-        echo "<td class='px-6 py-4 font-medium'>" . htmlspecialchars($row['name']) . "</td>";
-        echo "<td class='px-6 py-4 text-gray-500'>$time_in</td>";
-        echo "<td class='px-6 py-4 text-gray-500'>$time_out</td>";
-        echo "<td class='px-6 py-4'><span class='px-3 py-1 rounded-full text-xs " .
-             ($row['status']=="ورود" ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700") .
-             "'>" . htmlspecialchars($row['status']) . "</span></td>";
-        echo "</tr>";
-    }}
-                 else {
+                        echo "<tr class='hover:bg-gray-50 transition'>";
+                        echo "<td class='px-6 py-4 font-medium'>" . htmlspecialchars($row['name']) . "</td>";
+                        echo "<td class='px-6 py-4 text-gray-500'>$time_in</td>";
+                        echo "<td class='px-6 py-4 text-gray-500'>$time_out</td>";
+                        echo "<td class='px-6 py-4'><span class='px-3 py-1 rounded-full text-xs " .
+                                ($row['status'] == "ورود" ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700") .
+                                "'>" . htmlspecialchars($row['status']) . "</span></td>";
+                        echo "</tr>";
+                    }
+                } else {
                     echo "<tr><td colspan='4' class='px-6 py-4 text-center text-gray-500'>هیچ داده‌ای ثبت نشده است</td></tr>";
                 }
                 $conn->close();

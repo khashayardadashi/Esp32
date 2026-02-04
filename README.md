@@ -14,6 +14,11 @@ Basic LED on/off control to get familiar with ESP32 GPIOs and the fundamental pr
 **Project 2 :**
 Motor speed control using PWM , analog input reading via ADC , and simulation of a washing machine selector using a Schmitt Trigger for signal stability.
 
+### 🔹 Signal Processing & Noise Reduction
+
+**Project 3:**
+Noise reduction and signal filtering techniques, including hardware debouncing, low-pass filtering, and software-based noise suppression to improve signal reliability.
+
 ### 🔹 Wireless Communication
 
 **Bluetooth :** 
